@@ -24,7 +24,6 @@
         "test": "cross-env NODE_ENV=test jest server/tests",
         "test:watch": "jest --watch",
         "test:coverage": "cross-env NODE_ENV=test jest server/tests --coverage",
-        "test:check-coverage": "yarn test:coverage && nyc check-coverage",
         "report-coverage": "coveralls < ./coverage/lcov.info"
     },
     "keywords": [
