@@ -1,5 +1,5 @@
 {
-    "name": "api-rest-nodejs-cockpit",
+    "name": "boilerplate-API-node-express-sequelize",
     "version": "0.0.1",
     "description": "A Boilerplate application for building APIs with nodeJS",
     "homepage": "https://github.com/launay12u/Boilerplate-API-node-express-sequelize#readme",
