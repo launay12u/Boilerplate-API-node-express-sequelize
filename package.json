@@ -1,8 +1,24 @@
 {
     "name": "api-rest-nodejs-cockpit",
-    "version": "0.2.0",
-    "description": "A Boilerplate application for building REST APIs",
-    "author": "Anthony Olla <anthony@cockpit.pro>",
+    "version": "0.0.1",
+    "description": "A Boilerplate application for building APIs with nodeJS",
+    "homepage": "https://github.com/launay12u/Boilerplate-API-node-express-sequelize#readme",
+    "repository": "github:launay12u/Boilerplate-API-node-express-sequelize",
+    "bugs": {"url":"https://github.com/launay12u/Boilerplate-API-node-express-sequelize/issues"},
+    "contributors": [
+        {
+            "name": "Guillaume Launay",
+            "url": "https://github.com/launay12u"
+        },
+        {
+            "name": "Anthony Olla",
+            "url": "https://github.com/ollaay"
+        },
+        {
+            "name": "Romain Postel",
+            "url": "https://github.com/postel5u"
+        }
+    ],
     "main": "index.js",
     "private": false,
     "engines": {
@@ -10,6 +26,7 @@
         "npm": ">=5.6.0",
         "yarn": ">=1.5.1"
     },
+    "license": "GPL-3.0",
     "scripts": {
         "start": "gulp serve",
         "start:debug": "cross-env DEBUG=amida-api-boilerplate:* yarn start",
@@ -72,8 +89,6 @@
         "method-override": "^2.3.5",
         "morgan": "1.7.0",
         "mysql2": "1.6.4",
-        "pg": "7.4.3",
-        "pg-hstore": "2.3.2",
         "run-sequence": "^1.1.5",
         "sequelize": "4.38.0",
         "supertest": "2.0.1",

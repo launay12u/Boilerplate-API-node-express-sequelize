@@ -1,4 +1,4 @@
-# Amida API Boilerplate
+# API Boilerplate
 
 ## Overview
 
@@ -12,7 +12,7 @@ This is a boilerplate application for building REST APIs in Node.js using ES6 an
 | Authentication via JsonWebToken                  	 	 | Supports authentication using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken).  |
 | Code Linting               			 | Uses the airbnb-base style guide with ESLint parsing modern ES6 syntax                                                                                              |
 | Auto server restart                  	 | Restart the server using [nodemon](https://github.com/remy/nodemon) in real-time anytime an edit is made, with babel compilation and eslint.                                                                                                                                                                            |
-| ES6 Code Coverage via [istanbul](https://www.npmjs.com/package/istanbul)                  | Supports code coverage of ES6 code using istanbul and mocha. Code coverage reports are saved in `coverage/` directory post `yarn test` execution. Open `coverage/lcov-report/index.html` to view coverage report. `yarn test` also displays code coverage summary on console. Code coverage can also be enforced overall and per file as well, configured via .istanbul.yml                                                                                                                                                                            |
+| ES6 Code Coverage via [jest](https://www.npmjs.com/package/jest)                  | Supports code coverage of ES6 code using jest. Code coverage reports are saved in `coverage/` directory post `yarn test` execution. Open `coverage/lcov-report/index.html` to view coverage report. `yarn test` also displays code coverage summary on console.                                                                                                                                                                           |
 | Debugging via [debug](https://www.npmjs.com/package/debug)           | Instead of inserting and deleting console.log you can replace it with the debug function and just leave it there. You can then selectively debug portions of your code by setting DEBUG env variable. If DEBUG env variable is not set, nothing is displayed to the console.                       |
 | Promisified Code via [bluebird](https://github.com/petkaantonov/bluebird)           | We love promise, don't we ? All our code is promisified and even so our tests via [supertest-as-promised](https://www.npmjs.com/package/supertest-as-promised).                       |
 | API parameter validation via [express-validation](https://www.npmjs.com/package/express-validation)           | Validate body, params, query, headers and cookies of a request (via middleware) and return a response with errors; if any of the configured validation rules fail. You won't anymore need to make your route handler dirty with such validations. |
@@ -118,16 +118,3 @@ Get code coverage summary on executing `yarn test`
 `yarn test` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
 ![Code coverage HTML report](https://cloud.githubusercontent.com/assets/4172932/12625331/571a48fe-c559-11e5-8aa0-f9aacfb8c1cb.jpg)
 
-## Docker Deployment
-
-Docker Compose:
-```sh
-docker-compose up
-```
-
-## AWS Deployment
-The basic steps for deploying to AWS are:
-1. Run the Packer script, `template.json`
-2. Run the Terraform script.
-
-Further details can be found in the `deploy` directory.
