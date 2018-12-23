@@ -40,7 +40,7 @@
         "pretest":"cross-env NODE_ENV=test gulp initTestDatabase",
         "test": "cross-env NODE_ENV=test jest server/tests",
         "test:watch": "jest --watch",
-        "test:coverage": "cross-env NODE_ENV=test jest server/tests --coverage",
+        "test:coverage": " yarn pretest && cross-env NODE_ENV=test jest server/tests --coverage",
         "report-coverage": "coveralls < ./coverage/lcov.info"
     },
     "keywords": [
