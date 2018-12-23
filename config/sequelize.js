@@ -50,15 +50,21 @@ Object
     
 // Synchronizing any model changes with database.
 
-sequelize
-    .sync()
-    .then(() => {
-        console.log('Database synchronized'); // eslint-disable-line no-console
-    })
-    .catch((error) => {
-        if (error) console.log('An error occured %j', error); // eslint-disable-line no-console
-    });
+// if test, use test database
+const isTestEnvironment = config.env === 'test';
 
+//On synchronise uniquement sur la database test // Modif à apporter pour deploiement
+
+if(isTestEnvironment){
+    sequelize
+        .sync()
+        .then(() => {
+            console.log('Database synchronized'); // eslint-disable-line no-console
+        })
+        .catch((error) => {
+            if (error) console.log('An error occured %j', error); // eslint-disable-line no-console
+        });
+}
 // assign the sequelize variables to the db object and returning the db.
 module.exports = _.extend({
     sequelize,
