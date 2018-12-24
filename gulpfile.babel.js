@@ -13,6 +13,30 @@ const paths = {
     tests: './server/tests/*.js',
 };
 
+//Init test database
+
+gulp.task('initTestDatabase',function(){
+
+    db.sequelize
+    .sync({force: true})
+    .then(() => {
+        console.log('Database test synchronized'); // eslint-disable-line no-console
+        db.sequelize.close();
+    })
+});
+
+//Init database
+
+gulp.task('initTestDatabase_db',function(){
+
+    db.sequelize
+    .sync()
+    .then(() => {
+        console.log('Database synchronized'); // eslint-disable-line no-console
+        db.sequelize.close();
+    })
+});
+
 // Clean up dist and coverage directory
 gulp.task('clean', () =>
     del.sync(['dist/**', 'dist/.*', 'coverage/**', '!dist', '!coverage'])
@@ -61,14 +85,4 @@ gulp.task('default', ['clean'], () => {
 });
 
 
-//Init test database
 
-gulp.task('initTestDatabase',function(){
-
-    db.sequelize
-    .sync({force: true})
-    .then(() => {
-        console.log('Database synchronized'); // eslint-disable-line no-console
-        db.sequelize.close();
-    })
-});
