@@ -4,16 +4,20 @@
 
 module.exports = (sequelize, DataTypes) => {
     const Motos = sequelize.define('Motos', {
-        Marque: {
+        brand: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Couleur: {
+        color: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        immatriculation: {
+        registration: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        displacement: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         createdAt: {

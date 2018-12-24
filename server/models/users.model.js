@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        telephone: {
+        phone: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        UrlPermis: {
+        UrlLicence: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        UrlPhotoIdentity: {
+        UrlIdentity: {
             type: DataTypes.STRING,
             allowNull: false,
         },

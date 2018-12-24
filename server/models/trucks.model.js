@@ -4,15 +4,19 @@
 
 module.exports = (sequelize, DataTypes) => {
     const Trucks = sequelize.define('Trucks', {
-        Marque: {
+        brand: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Couleur: {
+        color: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        immatriculation: {
+        registration: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        trailer_capacity: {
             type: DataTypes.STRING,
             allowNull: false,
         },
