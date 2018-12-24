@@ -26,17 +26,15 @@ const sequelize = new Sequelize(
     sequelizeOptions
 );
 
-// const modelsDir = path.normalize(`${__dirname}/../server/models`);
-
-const modelsDir1 = path.normalize(`${__dirname}/../server/models/User_Admin_Data_soft/`);
+const modelsDir = path.normalize(`${__dirname}/../server/models`);
 
 // loop through all files in models directory ignoring hidden files and this file
-fs.readdirSync(modelsDir1)
+fs.readdirSync(modelsDir)
     .filter(file => (file.indexOf('.') !== 0) && (file.indexOf('.map') === -1))
     // import model files and save model names
     .forEach((file) => {
         console.log(`Loading model file ${file}`); // eslint-disable-line no-console
-        const model = sequelize.import(path.join(modelsDir1, file));
+        const model = sequelize.import(path.join(modelsDir, file));
         db[model.name] = model;
     });
     

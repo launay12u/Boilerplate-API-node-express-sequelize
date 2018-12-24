@@ -1,16 +1,24 @@
 /**
- * CorpsEtat Schema
+ * Trucks Schema
  */
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const CorpsEtat = sequelize.define('CorpsEtat', {
-            DetailCorpsEtat: {
+    const Trucks = sequelize.define('Trucks', {
+            Marque: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            Couleur: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            immatriculation: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
             createdAt: {
                 type: DataTypes.DATE,
-                allowNull: false,
+                allowNull: true,
             },
             updatedAt: {
                 type: DataTypes.DATE,
@@ -23,17 +31,14 @@ module.exports = (sequelize, DataTypes) => {
         },{
             paranoid: true,
             freezeTableName: true,
-            tableName: 'CorpsEtat'
+            tableName: 'Trucks'
         });
 
-        CorpsEtat.associate = function (models){
+        Trucks.associate = function (models){
   
-            CorpsEtat.hasMany(models.EntrepriseDataClientSoft, {
-                foreignKey: 'CorpsEtat_CorpsEtatID',
-                as: 'corpsetat'
-            });
+            models.Trucks.belongsTo(models.Vehicules);
 
         };
 
-    return CorpsEtat;
+    return Trucks;
 };
