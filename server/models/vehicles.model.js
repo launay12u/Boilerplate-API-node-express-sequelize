@@ -27,10 +27,6 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'Users_Id',
             as: 'vehicles',
         });
-
-        models.Vehicles.belongsTo(models.Cars);
-        models.Vehicles.belongsTo(models.Motos);
-        models.Vehicles.belongsTo(models.Trucks);
     };
 
     return Vehicles;
