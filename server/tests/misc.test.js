@@ -34,18 +34,4 @@ describe('## Misc', () => {
                 .catch(done);
         });
     });
-
-    describe('# Error Handling', () => {
-        test('should handle express validation error - name is required', (done) => {
-            request(app)
-                .post(`${apiVersionPath}/entreprises`)
-                .send()
-                .expect(httpStatus.BAD_REQUEST)
-                .then((res) => {
-                    expect(res.body.message).toEqual('"name" is required and "rs" is required and "siret" is required and "mail" is required and "tel" is required and "libelle" is required and "ville" is required and "cp" is required and "lat" is required and "long" is required and "CorpsEtatId" is required');
-                    done();
-                })
-                .catch(done);
-        });
-    });
 });

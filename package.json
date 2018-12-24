@@ -1,5 +1,5 @@
 {
-    "name": "boilerplate-API-node-express-sequelize",
+    "name": "boilerplate-api-node-express-sequelize",
     "version": "0.0.1",
     "description": "A Boilerplate application for building APIs with nodeJS",
     "homepage": "https://github.com/launay12u/Boilerplate-API-node-express-sequelize#readme",
@@ -36,7 +36,7 @@
         "lint": "esw *.js server config --color",
         "lint:watch": "yarn lint -- --watch",
         "beautify": "es-beautifier -u -c .eslintrc.js *.js server config",
-        "precommit": "yarn lint && yarn test",
+        "precommit": "yarn lint --fix && yarn test",
         "pretest":"cross-env NODE_ENV=test gulp initTestDatabase",
         "test": "cross-env NODE_ENV=test jest server/tests",
         "test:watch": "jest --watch",
@@ -49,7 +49,6 @@
         "node.js",
         "es6",
         "jest",
-        "nyc",
         "REST",
         "API",
         "boilerplate"

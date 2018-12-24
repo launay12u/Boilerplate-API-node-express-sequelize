@@ -44,7 +44,7 @@ const config = {
     apiVersion: envVars.API_VERSION,
     jwtSecret: envVars.JWT_SECRET,
     mysql: {
-        db:isTestEnvironment ? envVars.MYSQL_ADDON_DB_TEST : envVars.MYSQL_ADDON_DB,
+        db: isTestEnvironment ? envVars.MYSQL_ADDON_DB_TEST : envVars.MYSQL_ADDON_DB,
         port: envVars.MYSQL_ADDON_PORT,
         host: envVars.MYSQL_ADDON_HOST,
         user: envVars.MYSQL_ADDON_USER,

@@ -6,7 +6,7 @@ import config from './config';
 
 const db = {};
 
-// connect to mysql 
+// connect to mysql
 const sequelizeOptions = {
     dialect: 'mysql',
     port: config.mysql.port,
@@ -37,23 +37,23 @@ fs.readdirSync(modelsDir)
         const model = sequelize.import(path.join(modelsDir, file));
         db[model.name] = model;
     });
-    
+
 Object
     .keys(db)
-    .forEach(function(modelName) {
-        if ("associate" in db[modelName]) {
-        db[modelName].associate(db);
+    .forEach((modelName) => {
+        if ('associate' in db[modelName]) {
+            db[modelName].associate(db);
         }
     });
-    
+
 // Synchronizing any model changes with database.
 
 // if test, use test database
 const isTestEnvironment = config.env === 'test';
 
-//On synchronise uniquement sur la database test // Modif à apporter pour deploiement
+// On synchronise uniquement sur la database test // Modif à apporter pour deploiement
 
-if(isTestEnvironment){
+if (isTestEnvironment) {
     sequelize
         .sync()
         .then(() => {
