@@ -3,7 +3,7 @@
  */
 
 module.exports = (sequelize, DataTypes) => {
-    const Vehicules = sequelize.define('Vehicules', {
+    const Vehicles = sequelize.define('Vehicles', {
         createdAt: {
             type: DataTypes.DATE,
             allowNull: true,
@@ -19,15 +19,15 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         paranoid: true,
         freezeTableName: true,
-        tableName: 'Vehicules',
+        tableName: 'Vehicles',
     });
 
-    Vehicules.associate = (models) => {
-        models.Vehicules.belongsTo(models.Users, {
+    Vehicles.associate = (models) => {
+        models.Vehicles.belongsTo(models.Users, {
             foreignKey: 'Users_Id',
-            as: 'vehicules',
+            as: 'vehicles',
         });
     };
 
-    return Vehicules;
+    return Vehicles;
 };

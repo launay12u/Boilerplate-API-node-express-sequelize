@@ -38,9 +38,6 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'Trucks',
     });
 
-    Trucks.associate = (models) => {
-        models.Trucks.belongsTo(models.Vehicules);
-    };
 
     return Trucks;
 };

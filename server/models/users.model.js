@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        Password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         createdAt: {
             type: DataTypes.DATE,
             allowNull: true,
@@ -49,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'User_id',
         });
 
-        models.Users.hasMany(models.Vehicules, {
+        models.Users.hasMany(models.Vehicles, {
             foreignKey: 'Users_Id',
             as: 'vehicules',
         });
